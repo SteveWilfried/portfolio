@@ -186,6 +186,7 @@
       <h2 id="contactTitle"></h2>
       <p id="contactText"></p>
       <a class="btn primary" id="emailBtn"></a>
+      <a class="btn" id="whatsappBtn" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn" id="githubBtn">GitHub</a>
       <a class="btn" id="linkedinBtn">LinkedIn</a>
     </div>
@@ -293,6 +294,12 @@
       $("contactText").textContent = c.contact;
       $("emailBtn").textContent = ui.emailBtn;
       $("emailBtn").href = "mailto:" + d.email;
+      if (d.whatsapp) {
+        $("whatsappBtn").href = d.whatsapp;
+        $("whatsappBtn").hidden = false;
+      } else {
+        $("whatsappBtn").hidden = true;
+      }
       $("githubBtn").href = d.github;
       $("linkedinBtn").href = d.linkedin;
 
