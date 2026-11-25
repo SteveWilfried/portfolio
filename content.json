@@ -1,22 +1,25 @@
 {
   "name": "STEVE DJOMI",
   "photo": "photo.jpg",
+  "cv": "cv.pdf",
   "email": "djomisteve76@gmail.com",
   "whatsapp": "https://wa.me/237690048785",
   "github": "https://github.com/ton-pseudo",
   "linkedin": "https://linkedin.com/in/ton-profil",
   "fr": {
     "ui": {
-      "pageTitle": "Portfolio | Développeur Full-Stack Python & Flutter",
+      "pageTitle": "Steve Djomi | Développeur Full-Stack Python & Flutter",
       "heroHello": "Bonjour, je suis",
       "btnProjects": "Voir mes projets",
       "btnContact": "Me contacter",
+      "btnCv": "Télécharger mon CV",
       "aboutTitle": "À propos",
       "skillsTitle": "Compétences",
       "eduTitle": "Formation & certifications",
       "educationTitle": "Formation",
       "certificationsTitle": "Certifications",
       "projectsTitle": "Projets",
+      "learnedTitle": "Ce que j'ai appris",
       "contactTitle": "Contact",
       "emailBtn": "Envoyer un email",
       "demo": "Démo",
@@ -47,6 +50,7 @@
         "title": "[Nom du projet phare] : prédiction à partir de données",
         "role": "Projet pièce maîtresse · Data, Backend, Mobile",
         "description": "Collecte et nettoyage de données, entraînement d'un modèle, exposition via une API FastAPI, puis application Flutter qui affiche les prédictions à l'utilisateur.",
+        "learned": "[Difficulté rencontrée, solution trouvée et ce que tu ferais autrement]",
         "split": { "values": [40, 30, 30], "label": "Data 40 % · Backend 30 % · Mobile 30 %" },
         "tags": ["Python", "FastAPI", "scikit-learn", "Flutter", "pandas"],
         "links": [ { "label": "GitHub", "url": "#" }, { "label": "Démo", "url": "#" } ]
@@ -55,6 +59,7 @@
         "title": "[Nom du projet full-stack] : API + application",
         "role": "Backend & Mobile",
         "description": "API REST avec authentification et CRUD, consommée par une application Flutter. Gestion des erreurs et tests automatisés.",
+        "learned": "[Difficulté rencontrée, solution trouvée et ce que tu ferais autrement]",
         "split": null,
         "tags": ["FastAPI", "PostgreSQL", "Flutter", "pytest"],
         "links": [ { "label": "GitHub", "url": "#" } ]
@@ -63,6 +68,7 @@
         "title": "[Nom du projet data] : analyse exploratoire",
         "role": "Data Science",
         "description": "Analyse d'un jeu de données réel, visualisations et conclusions, avec un notebook documenté.",
+        "learned": "[Difficulté rencontrée, solution trouvée et ce que tu ferais autrement]",
         "split": null,
         "tags": ["pandas", "NumPy", "matplotlib"],
         "links": [ { "label": "GitHub", "url": "#" } ]
@@ -72,16 +78,18 @@
   },
   "en": {
     "ui": {
-      "pageTitle": "Portfolio | Full-Stack Python & Flutter Developer",
+      "pageTitle": "Steve Djomi | Full-Stack Python & Flutter Developer",
       "heroHello": "Hi, I'm",
       "btnProjects": "View my projects",
       "btnContact": "Contact me",
+      "btnCv": "Download my CV",
       "aboutTitle": "About",
       "skillsTitle": "Skills",
       "eduTitle": "Education & certifications",
       "educationTitle": "Education",
       "certificationsTitle": "Certifications",
       "projectsTitle": "Projects",
+      "learnedTitle": "What I learned",
       "contactTitle": "Contact",
       "emailBtn": "Send an email",
       "demo": "Demo",
@@ -112,6 +120,7 @@
         "title": "[Flagship project name]: prediction from data",
         "role": "Flagship project · Data, Backend, Mobile",
         "description": "Data collection and cleaning, model training, exposed through a FastAPI API, and a Flutter app that displays the predictions to the user.",
+        "learned": "[Difficulty you faced, the solution you found and what you would do differently]",
         "split": { "values": [40, 30, 30], "label": "Data 40% · Backend 30% · Mobile 30%" },
         "tags": ["Python", "FastAPI", "scikit-learn", "Flutter", "pandas"],
         "links": [ { "label": "GitHub", "url": "#" }, { "label": "Demo", "url": "#" } ]
@@ -120,6 +129,7 @@
         "title": "[Full-stack project name]: API + application",
         "role": "Backend & Mobile",
         "description": "REST API with authentication and CRUD operations, consumed by a Flutter application. Error handling and automated tests.",
+        "learned": "[Difficulty you faced, the solution you found and what you would do differently]",
         "split": null,
         "tags": ["FastAPI", "PostgreSQL", "Flutter", "pytest"],
         "links": [ { "label": "GitHub", "url": "#" } ]
@@ -128,6 +138,7 @@
         "title": "[Data project name]: exploratory analysis",
         "role": "Data Science",
         "description": "Analysis of a real dataset, visualizations and conclusions, documented in a notebook.",
+        "learned": "[Difficulty you faced, the solution you found and what you would do differently]",
         "split": null,
         "tags": ["pandas", "NumPy", "matplotlib"],
         "links": [ { "label": "GitHub", "url": "#" } ]

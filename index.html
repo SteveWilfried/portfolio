@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Steve Djomi | Développeur Full-Stack Python & Flutter</title>
+  <meta name="description" content="Développeur Full-Stack Python (FastAPI) & Flutter, data scientist junior. Je transforme les données en produits multiplateformes.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Steve Djomi | Développeur Full-Stack Python & Flutter">
+  <meta property="og:description" content="APIs FastAPI, applications Flutter et modèles de données : portfolio de Steve Djomi.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%2338bdf8' font-family='monospace'%3ESD%3C/text%3E%3C/svg%3E">
+
   <style>
     :root {
       --bg: #0f172a;
@@ -113,6 +119,13 @@
       text-align: center; padding: 2rem 0; color: var(--muted); font-size: 0.85rem;
       border-top: 1px solid rgba(148,163,184,0.1);
     }
+    .learned-title {
+      font-size: 0.85rem; font-weight: 600; color: var(--accent);
+      margin: 0.75rem 0 0.25rem;
+    }
+    .learned { color: var(--muted); font-size: 0.95rem; font-style: italic; }
+    .socials { margin-bottom: 0.75rem; }
+    .socials a { color: var(--accent); }
     .load-error { color: #f87171; padding: 2rem 0; text-align: center; }
 
     #bg-canvas {
@@ -156,6 +169,7 @@
         <p class="tagline" id="tagline"></p>
         <a class="btn primary" href="#projets" id="btnProjects"></a>
         <a class="btn" href="#contact" id="btnContact"></a>
+        <a class="btn" id="cvBtn" href="cv.pdf" download></a>
       </div>
       <div class="profile-photo">
         <span>Photo</span>
@@ -206,7 +220,12 @@
   </section>
 
   <footer>
-    <div class="container" id="footerText"></div>
+    <div class="container">
+      <div class="socials">
+        <a id="footerGithub">GitHub</a> · <a id="footerLinkedin">LinkedIn</a> · <a id="footerEmail">Email</a>
+      </div>
+      <div id="footerText"></div>
+    </div>
   </footer>
 
   <script>
@@ -234,6 +253,11 @@
       $("tagline").textContent = c.tagline;
       $("btnProjects").textContent = ui.btnProjects;
       $("btnContact").textContent = ui.btnContact;
+      $("cvBtn").textContent = ui.btnCv;
+      $("cvBtn").href = d.cv;
+      $("footerGithub").href = d.github;
+      $("footerLinkedin").href = d.linkedin;
+      $("footerEmail").href = "mailto:" + d.email;
       $("photo").alt = d.name;
       $("photo").src = d.photo;
 
@@ -278,6 +302,10 @@
         art.append(make("h3", p.title), make("p", p.role, "role"));
         art.lastChild.className = "role";
         art.append(make("p", p.description));
+        if (p.learned) {
+          art.append(make("h4", ui.learnedTitle, "learned-title"));
+          art.append(make("p", p.learned, "learned"));
+        }
 
         if (p.split) {
           const bar = make("div", null, "split-bar");
