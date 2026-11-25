@@ -1,0 +1,137 @@
+{
+  "name": "STEVE DJOMI",
+  "photo": "photo.jpg",
+  "email": "ton.email@exemple.com",
+  "github": "https://github.com/ton-pseudo",
+  "linkedin": "https://linkedin.com/in/ton-profil",
+  "fr": {
+    "ui": {
+      "pageTitle": "Portfolio | Développeur Full-Stack Python & Flutter",
+      "heroHello": "Bonjour, je suis",
+      "btnProjects": "Voir mes projets",
+      "btnContact": "Me contacter",
+      "aboutTitle": "À propos",
+      "skillsTitle": "Compétences",
+      "eduTitle": "Formation & certifications",
+      "educationTitle": "Formation",
+      "certificationsTitle": "Certifications",
+      "projectsTitle": "Projets",
+      "contactTitle": "Contact",
+      "emailBtn": "Envoyer un email",
+      "demo": "Démo",
+      "footer": "Site réalisé avec HTML, CSS et JavaScript."
+    },
+    "tagline": "Développeur Full-Stack Python & Flutter | Data & APIs. Je transforme les données en produits multiplateformes, de l'analyse jusqu'à l'interface utilisateur.",
+    "about": [
+      "Je fais le lien entre la donnée, le backend et l'expérience utilisateur. Avec FastAPI, je conçois des APIs qui exposent des modèles de machine learning et des services métier.",
+      "Avec Flutter, je crée des applications multiplateformes qui consomment ces services et rendent les résultats lisibles pour l'utilisateur. Ma formation en data science me permet de travailler la donnée en amont : nettoyage, analyse, modélisation.",
+      "Je recherche des missions hybrides où je peux travailler sur l'ensemble de la chaîne, de la donnée au produit."
+    ],
+    "skills": [
+      { "title": "Backend", "items": ["Python, FastAPI", "Pydantic, SQLAlchemy", "PostgreSQL", "Docker"] },
+      { "title": "Mobile & Multiplateforme", "items": ["Flutter, Dart", "Gestion d'état (Provider / Riverpod)", "Consommation d'API REST", "Android, Web (à compléter selon tes tests)"] },
+      { "title": "Data Science", "items": ["pandas, NumPy", "scikit-learn", "Visualisation de données", "Nettoyage et modélisation"] },
+      { "title": "Outils", "items": ["Git, GitHub", "pytest, flutter test", "CI/CD", "Linux"] }
+    ],
+    "education": [
+      { "name": "[Intitulé du diplôme]", "school": "[Nom de l'établissement]", "date": "[Année d'obtention]" }
+    ],
+    "certifications": [
+      { "name": "[Nom de la certification]", "org": "[Organisme], [année]" },
+      { "name": "[Nom de la certification]", "org": "[Organisme], [année]" },
+      { "name": "[Nom de la certification]", "org": "[Organisme], [année]" }
+    ],
+    "projects": [
+      {
+        "title": "[Nom du projet phare] : prédiction à partir de données",
+        "role": "Projet pièce maîtresse · Data, Backend, Mobile",
+        "description": "Collecte et nettoyage de données, entraînement d'un modèle, exposition via une API FastAPI, puis application Flutter qui affiche les prédictions à l'utilisateur.",
+        "split": { "values": [40, 30, 30], "label": "Data 40 % · Backend 30 % · Mobile 30 %" },
+        "tags": ["Python", "FastAPI", "scikit-learn", "Flutter", "pandas"],
+        "links": [ { "label": "GitHub", "url": "#" }, { "label": "Démo", "url": "#" } ]
+      },
+      {
+        "title": "[Nom du projet full-stack] : API + application",
+        "role": "Backend & Mobile",
+        "description": "API REST avec authentification et CRUD, consommée par une application Flutter. Gestion des erreurs et tests automatisés.",
+        "split": null,
+        "tags": ["FastAPI", "PostgreSQL", "Flutter", "pytest"],
+        "links": [ { "label": "GitHub", "url": "#" } ]
+      },
+      {
+        "title": "[Nom du projet data] : analyse exploratoire",
+        "role": "Data Science",
+        "description": "Analyse d'un jeu de données réel, visualisations et conclusions, avec un notebook documenté.",
+        "split": null,
+        "tags": ["pandas", "NumPy", "matplotlib"],
+        "links": [ { "label": "GitHub", "url": "#" } ]
+      }
+    ],
+    "contact": "Disponible pour des missions hybrides Full-Stack, ML Engineer junior ou Software Engineer Data Products."
+  },
+  "en": {
+    "ui": {
+      "pageTitle": "Portfolio | Full-Stack Python & Flutter Developer",
+      "heroHello": "Hi, I'm",
+      "btnProjects": "View my projects",
+      "btnContact": "Contact me",
+      "aboutTitle": "About",
+      "skillsTitle": "Skills",
+      "eduTitle": "Education & certifications",
+      "educationTitle": "Education",
+      "certificationsTitle": "Certifications",
+      "projectsTitle": "Projects",
+      "contactTitle": "Contact",
+      "emailBtn": "Send an email",
+      "demo": "Demo",
+      "footer": "Built with HTML, CSS and JavaScript."
+    },
+    "tagline": "Full-Stack Python & Flutter Developer | Data & APIs. I turn data into cross-platform products, from analysis to the user interface.",
+    "about": [
+      "I bridge the gap between data, backend and user experience. With FastAPI, I build APIs that expose machine learning models and business services.",
+      "With Flutter, I build cross-platform applications that consume these services and make the results easy to understand for the user. My data science background lets me work on the data upstream: cleaning, analysis, modeling.",
+      "I am looking for hybrid missions where I can work across the whole chain, from data to product."
+    ],
+    "skills": [
+      { "title": "Backend", "items": ["Python, FastAPI", "Pydantic, SQLAlchemy", "PostgreSQL", "Docker"] },
+      { "title": "Mobile & Cross-platform", "items": ["Flutter, Dart", "State management (Provider / Riverpod)", "REST API consumption", "Android, Web (to be updated based on your testing)"] },
+      { "title": "Data Science", "items": ["pandas, NumPy", "scikit-learn", "Data visualization", "Data cleaning and modeling"] },
+      { "title": "Tools", "items": ["Git, GitHub", "pytest, flutter test", "CI/CD", "Linux"] }
+    ],
+    "education": [
+      { "name": "[Degree title]", "school": "[School name]", "date": "[Graduation year]" }
+    ],
+    "certifications": [
+      { "name": "[Certification name]", "org": "[Issuer], [year]" },
+      { "name": "[Certification name]", "org": "[Issuer], [year]" },
+      { "name": "[Certification name]", "org": "[Issuer], [year]" }
+    ],
+    "projects": [
+      {
+        "title": "[Flagship project name]: prediction from data",
+        "role": "Flagship project · Data, Backend, Mobile",
+        "description": "Data collection and cleaning, model training, exposed through a FastAPI API, and a Flutter app that displays the predictions to the user.",
+        "split": { "values": [40, 30, 30], "label": "Data 40% · Backend 30% · Mobile 30%" },
+        "tags": ["Python", "FastAPI", "scikit-learn", "Flutter", "pandas"],
+        "links": [ { "label": "GitHub", "url": "#" }, { "label": "Demo", "url": "#" } ]
+      },
+      {
+        "title": "[Full-stack project name]: API + application",
+        "role": "Backend & Mobile",
+        "description": "REST API with authentication and CRUD operations, consumed by a Flutter application. Error handling and automated tests.",
+        "split": null,
+        "tags": ["FastAPI", "PostgreSQL", "Flutter", "pytest"],
+        "links": [ { "label": "GitHub", "url": "#" } ]
+      },
+      {
+        "title": "[Data project name]: exploratory analysis",
+        "role": "Data Science",
+        "description": "Analysis of a real dataset, visualizations and conclusions, documented in a notebook.",
+        "split": null,
+        "tags": ["pandas", "NumPy", "matplotlib"],
+        "links": [ { "label": "GitHub", "url": "#" } ]
+      }
+    ],
+    "contact": "Available for hybrid missions: Full-Stack, junior ML Engineer or Software Engineer Data Products."
+  }
+}

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #a78bfa;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 1.25rem; }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15,23,42,0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(148,163,184,0.1);
+    }
+    .topbar .container { display: flex; justify-content: flex-end; align-items: center; height: 56px; }
+    .lang-switch { display: inline-flex; border: 1px solid var(--accent); border-radius: 999px; overflow: hidden; }
+    .lang-switch button {
+      background: transparent; color: var(--accent); border: none;
+      padding: 0.35rem 0.9rem; font-size: 0.85rem; font-weight: 600;
+      cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .lang-switch button.active { background: var(--accent); color: var(--bg); }
+
+    header.hero { padding: 5rem 0 4rem; background:
+      radial-gradient(circle at top left, rgba(56,189,248,0.15), transparent 50%),
+      radial-gradient(circle at bottom right, rgba(167,139,250,0.15), transparent 50%); }
+    .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; }
+    .hero-text { flex: 1; min-width: 0; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; margin-bottom: 1rem; }
+    .hero .tagline { font-size: 1.15rem; color: var(--muted); max-width: 680px; margin-bottom: 2rem; }
+    .highlight {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    .profile-photo {
+      position: relative; flex-shrink: 0;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: var(--surface); border: 2px dashed rgba(56,189,248,0.4);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; color: var(--muted); font-size: 0.9rem;
+    }
+    .profile-photo img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; border-radius: 50%;
+    }
+
+    .btn {
+      display: inline-block; padding: 0.7rem 1.4rem; border-radius: 999px;
+      border: 1px solid var(--accent); color: var(--accent);
+      margin-right: 0.75rem; margin-top: 0.5rem; transition: background 0.2s, color 0.2s;
+    }
+    .btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
+    .btn.primary { background: var(--accent); color: var(--bg); }
+
+    section { padding: 3.5rem 0; }
+    section h2 { font-size: 1.6rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
+    section h2::after {
+      content: ""; position: absolute; left: 0; bottom: 0;
+      width: 48px; height: 3px; background: var(--accent); border-radius: 2px;
+    }
+    .about p { color: var(--muted); max-width: 760px; margin-bottom: 1rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      padding: 1.5rem; border: 1px solid rgba(148,163,184,0.1);
+    }
+    .card h3 { font-size: 1.05rem; margin-bottom: 0.75rem; color: var(--accent); }
+    .card ul { list-style: none; color: var(--muted); font-size: 0.95rem; }
+    .card li { margin-bottom: 0.3rem; }
+    .card li strong { color: var(--text); font-weight: 600; }
+
+    .projects { display: grid; gap: 1.25rem; }
+    .project h3 { font-size: 1.2rem; margin-bottom: 0.4rem; color: var(--text); }
+    .project .role { font-size: 0.85rem; color: var(--accent-2); margin-bottom: 0.75rem; }
+    .project p { color: var(--muted); margin-bottom: 0.5rem; }
+    .project .links a { margin-right: 1rem; font-size: 0.95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0; }
+    .tag {
+      font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 6px;
+      background: rgba(56,189,248,0.1); color: var(--accent);
+    }
+    .split-bar { display: flex; height: 8px; border-radius: 999px; overflow: hidden; margin: 0.75rem 0 0.5rem; }
+    .split-bar span:nth-child(1) { background: #38bdf8; }
+    .split-bar span:nth-child(2) { background: #a78bfa; }
+    .split-bar span:nth-child(3) { background: #34d399; }
+    .split-legend { font-size: 0.8rem; color: var(--muted); }
+
+    .contact { text-align: center; }
+    .contact h2 { text-align: left; }
+    .contact p { color: var(--muted); margin-bottom: 1.25rem; }
+
+    footer {
+      text-align: center; padding: 2rem 0; color: var(--muted); font-size: 0.85rem;
+      border-top: 1px solid rgba(148,163,184,0.1);
+    }
+    .load-error { color: #f87171; padding: 2rem 0; text-align: center; }
+
+    @media (max-width: 720px) {
+      .hero-inner { flex-direction: column-reverse; text-align: center; }
+      .profile-photo { width: 180px; height: 180px; }
+    }
+    @media (max-width: 600px) {
+      header.hero { padding: 4rem 0 3rem; }
+      .btn { margin-right: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="fr" class="active">FR</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1><span id="heroHello"></span> <span class="highlight" id="heroName"></span></h1>
+        <p class="tagline" id="tagline"></p>
+        <a class="btn primary" href="#projets" id="btnProjects"></a>
+        <a class="btn" href="#contact" id="btnContact"></a>
+      </div>
+      <div class="profile-photo">
+        <span>Photo</span>
+        <img id="photo" src="photo.jpg" alt="" onerror="this.remove()">
+      </div>
+    </div>
+  </header>
+
+  <div id="app-error" class="load-error" hidden></div>
+
+  <section class="about">
+    <div class="container">
+      <h2 id="aboutTitle"></h2>
+      <div id="about"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 id="skillsTitle"></h2>
+      <div class="grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <section id="formation">
+    <div class="container">
+      <h2 id="eduTitle"></h2>
+      <div class="grid" id="eduGrid"></div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="container">
+      <h2 id="projectsTitle"></h2>
+      <div class="projects" id="projectsList"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 id="contactTitle"></h2>
+      <p id="contactText"></p>
+      <a class="btn primary" id="emailBtn"></a>
+      <a class="btn" id="githubBtn">GitHub</a>
+      <a class="btn" id="linkedinBtn">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" id="footerText"></div>
+  </footer>
+
+  <script>
+    const state = { data: null, lang: "fr" };
+
+    const $ = id => document.getElementById(id);
+
+    function make(tag, text, cls) {
+      const el = document.createElement(tag);
+      if (cls) el.className = cls;
+      if (text !== undefined && text !== null) el.textContent = text;
+      return el;
+    }
+
+    function render() {
+      const d = state.data;
+      const c = d[state.lang];
+      const ui = c.ui;
+
+      document.documentElement.lang = state.lang;
+      document.title = ui.pageTitle;
+
+      $("heroHello").textContent = ui.heroHello;
+      $("heroName").textContent = d.name;
+      $("tagline").textContent = c.tagline;
+      $("btnProjects").textContent = ui.btnProjects;
+      $("btnContact").textContent = ui.btnContact;
+      $("photo").alt = d.name;
+      $("photo").src = d.photo;
+
+      $("aboutTitle").textContent = ui.aboutTitle;
+      const about = $("about");
+      about.replaceChildren(...c.about.map(p => make("p", p, null)));
+      about.querySelectorAll("p").forEach(p => p.style.cssText = "color:var(--muted);max-width:760px;margin-bottom:1rem");
+
+      $("skillsTitle").textContent = ui.skillsTitle;
+      $("skillsGrid").replaceChildren(...c.skills.map(s => {
+        const card = make("div", null, "card");
+        card.append(make("h3", s.title));
+        const ul = make("ul");
+        s.items.forEach(item => ul.append(make("li", item)));
+        card.append(ul);
+        return card;
+      }));
+
+      $("eduTitle").textContent = ui.eduTitle;
+      const eduCard = make("div", null, "card");
+      eduCard.append(make("h3", ui.educationTitle));
+      const eduUl = make("ul");
+      c.education.forEach(e => {
+        const li1 = make("li"); li1.append(make("strong", e.name));
+        eduUl.append(li1, make("li", e.school), make("li", e.date));
+      });
+      eduCard.append(eduUl);
+
+      const certCard = make("div", null, "card");
+      certCard.append(make("h3", ui.certificationsTitle));
+      const certUl = make("ul");
+      c.certifications.forEach(cert => {
+        const li = make("li"); li.append(make("strong", cert.name), document.createTextNode(" · " + cert.org));
+        certUl.append(li);
+      });
+      certCard.append(certUl);
+      $("eduGrid").replaceChildren(eduCard, certCard);
+
+      $("projectsTitle").textContent = ui.projectsTitle;
+      $("projectsList").replaceChildren(...c.projects.map(p => {
+        const art = make("article", null, "card project");
+        art.append(make("h3", p.title), make("p", p.role, "role"));
+        art.lastChild.className = "role";
+        art.append(make("p", p.description));
+
+        if (p.split) {
+          const bar = make("div", null, "split-bar");
+          p.split.values.forEach(v => {
+            const span = make("span");
+            span.style.width = v + "%";
+            bar.append(span);
+          });
+          art.append(bar, make("div", p.split.label, "split-legend"));
+        }
+
+        const tags = make("div", null, "tags");
+        p.tags.forEach(t => tags.append(make("span", t, "tag")));
+        art.append(tags);
+
+        const links = make("div", null, "links");
+        p.links.forEach(l => {
+          const a = make("a", l.label);
+          a.href = l.url;
+          links.append(a);
+        });
+        art.append(links);
+        return art;
+      }));
+
+      $("contactTitle").textContent = ui.contactTitle;
+      $("contactText").textContent = c.contact;
+      $("emailBtn").textContent = ui.emailBtn;
+      $("emailBtn").href = "mailto:" + d.email;
+      $("githubBtn").href = d.github;
+      $("linkedinBtn").href = d.linkedin;
+
+      $("footerText").textContent = "© " + new Date().getFullYear() + " " + d.name + ". " + ui.footer;
+
+      document.querySelectorAll(".lang-switch button").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === state.lang);
+      });
+    }
+
+    document.querySelectorAll(".lang-switch button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        state.lang = btn.dataset.lang;
+        render();
+      });
+    });
+
+    async function init() {
+      try {
+        const res = await fetch("content.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        state.data = await res.json();
+        render();
+      } catch (err) {
+        const box = $("app-error");
+        box.hidden = false;
+        box.textContent = "Impossible de charger content.json. Lance le site via un serveur (voir les instructions) et non en ouvrant le fichier directement.";
+        console.error(err);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
